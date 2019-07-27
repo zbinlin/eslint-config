@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "ssh://git.github.com/zbinlin/eslint-config.git"
+        "url": "git+https://github.com/zbinlin/eslint-config.git"
     },
     "keywords": [
         "eslint",
