@@ -1,4 +1,3 @@
-const path = require('path');
 const {
     exts2glob,
 
@@ -18,9 +17,8 @@ const extensions = [].concat(
 );
 module.exports = {
     files: exts2glob(extensions),
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: path.join(process.cwd(), "tsconfig.json"),
     },
     settings: {
         'import/extensions': extensions,
@@ -36,7 +34,7 @@ module.exports = {
         },
     },
     plugins: [
-        "@typescript-eslint",
+        '@typescript-eslint',
     ],
     rules: Object.assign(
         {},
@@ -44,35 +42,35 @@ module.exports = {
             /**
              * @link https://github.com/benmosher/eslint-plugin-import/issues/920
              */
-            "import/named": "off",
+            'import/named': 'off',
 
-            "react/display-name": "off",
+            'react/display-name': 'off',
 
-            "@typescript-eslint/no-object-literal-type-assertion": [
-                true,
+            '@typescript-eslint/no-object-literal-type-assertion': [
+                'error',
                 {
-                    "allow-arguments": true,
+                    allowAsParameter: true,
                 },
             ],
-            "@typescript-eslint/no-non-null-assertion": false,
-            "@typescript-eslint/interface-name-prefix": false,
-            "@typescript-eslint/no-unused-vars": [
-                "error",
+            '@typescript-eslint/no-non-null-assertion': 'off',
+            '@typescript-eslint/interface-name-prefix': 'off',
+            '@typescript-eslint/no-unused-vars': [
+                'error',
                 {
-                    argsIgnorePattern: "^_",
+                    argsIgnorePattern: '^_',
                 },
             ],
-            "@typescript-eslint/no-explicit-any": 'off',
-            "@typescript-eslint/array-type": ["error", "array-simple"],
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/array-type': ['error', 'array-simple'],
 
             /**
              * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
              */
-            "no-undef": "off",
+            'no-undef': 'off',
         },
     ),
     extends: [
-        "plugin:import/typescript",
-        "plugin:@typescript-eslint/recommended",
+        'plugin:import/typescript',
+        'plugin:@typescript-eslint/recommended',
     ],
 };
