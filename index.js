@@ -1,6 +1,6 @@
-const jsOpt = require('./javascript');
-const tsOpt = require('./typescript');
-const reactOpt = require('./react');
+const jsOpt = require("./javascript");
+const tsOpt = require("./typescript");
+const reactOpt = require("./react");
 const {
     exts2glob,
     toTestExts,
@@ -13,7 +13,7 @@ const {
     CJSX_EXTENSIONS,
     MJSX_EXTENSIONS,
     TSX_EXTENSIONS,
-} = require('./helper');
+} = require("./helper");
 
 const testExtsPattern = exts2glob(toTestExts(
     [].concat(

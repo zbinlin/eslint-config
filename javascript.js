@@ -3,7 +3,7 @@ const {
     JS_EXTENSIONS,
     CJS_EXTENSIONS,
     MJS_EXTENSIONS,
-} = require('./helper');
+} = require("./helper");
 
 const extensions = [].concat(
     JS_EXTENSIONS, CJS_EXTENSIONS, MJS_EXTENSIONS,
@@ -12,53 +12,53 @@ module.exports = {
     files: exts2glob(extensions),
     parserOptions: {
         ecmaVersion: 2019,
-        sourceType: 'module',
+        sourceType: "module",
         ecmaFeatures: {
         },
     },
     rules: {
         indent: [
-            'error',
+            "error",
             4,
             {
                 SwitchCase: 1,
             },
         ],
         quotes: [
-            'error',
-            'single',
+            "error",
+            "double",
             {
                 avoidEscape: true,
                 allowTemplateLiterals: true,
             },
         ],
-        'linebreak-style': [
-            'error',
-            'unix',
+        "linebreak-style": [
+            "error",
+            "unix",
         ],
         semi: [
-            'error',
-            'always',
+            "error",
+            "always",
         ],
-        'no-unused-vars': [
-            'error',
+        "no-unused-vars": [
+            "error",
             {
-                args: 'none',
+                args: "none",
                 ignoreRestSiblings: true,
             },
         ],
-        'no-console': [
-            'off',
+        "no-console": [
+            "off",
         ],
-        'comma-dangle': [
-            'warn',
-            'always-multiline',
+        "comma-dangle": [
+            "warn",
+            "always-multiline",
         ],
-        'no-trailing-spaces': [
-            'error',
+        "no-trailing-spaces": [
+            "error",
         ],
-        'import/no-unresolved': [
-            'warn',
+        "import/no-unresolved": [
+            "warn",
             {
                 commonjs: true,
             },
@@ -67,8 +67,8 @@ module.exports = {
     plugins: [
     ],
     extends: [
-        'eslint:recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
     ],
 };

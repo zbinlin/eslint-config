@@ -9,7 +9,7 @@ const {
     CJSX_EXTENSIONS,
     MJSX_EXTENSIONS,
     TSX_EXTENSIONS,
-} = require('./helper');
+} = require("./helper");
 
 const extensions = [].concat(
     JS_EXTENSIONS, CJS_EXTENSIONS, MJS_EXTENSIONS, TS_EXTENSIONS,
@@ -17,15 +17,15 @@ const extensions = [].concat(
 );
 module.exports = {
     files: exts2glob(extensions),
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
     parserOptions: {
     },
     settings: {
-        'import/extensions': extensions,
-        'import/parsers': {
-            '@typescript-eslint/parser': [...TS_EXTENSIONS, ...TSX_EXTENSIONS],
+        "import/extensions": extensions,
+        "import/parsers": {
+            "@typescript-eslint/parser": [...TS_EXTENSIONS, ...TSX_EXTENSIONS],
         },
-        'import/resolver': {
+        "import/resolver": {
             typescript: {
             },
             node: {
@@ -34,7 +34,7 @@ module.exports = {
         },
     },
     plugins: [
-        '@typescript-eslint',
+        "@typescript-eslint",
     ],
     rules: Object.assign(
         {},
@@ -42,35 +42,35 @@ module.exports = {
             /**
              * @link https://github.com/benmosher/eslint-plugin-import/issues/920
              */
-            'import/named': 'off',
+            "import/named": "off",
 
-            'react/display-name': 'off',
+            "react/display-name": "off",
 
-            '@typescript-eslint/no-object-literal-type-assertion': [
-                'error',
+            "@typescript-eslint/no-object-literal-type-assertion": [
+                "error",
                 {
                     allowAsParameter: true,
                 },
             ],
-            '@typescript-eslint/no-non-null-assertion': 'off',
-            '@typescript-eslint/interface-name-prefix': 'off',
-            '@typescript-eslint/no-unused-vars': [
-                'error',
+            "@typescript-eslint/no-non-null-assertion": "off",
+            "@typescript-eslint/interface-name-prefix": "off",
+            "@typescript-eslint/no-unused-vars": [
+                "error",
                 {
-                    argsIgnorePattern: '^_',
+                    argsIgnorePattern: "^_",
                 },
             ],
-            '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/array-type': ['error', 'array-simple'],
+            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/array-type": ["error", "array-simple"],
 
             /**
              * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
              */
-            'no-undef': 'off',
+            "no-undef": "off",
         },
     ),
     extends: [
-        'plugin:import/typescript',
-        'plugin:@typescript-eslint/recommended',
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended",
     ],
 };

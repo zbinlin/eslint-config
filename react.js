@@ -4,7 +4,7 @@ const {
     CJSX_EXTENSIONS,
     MJSX_EXTENSIONS,
     TSX_EXTENSIONS,
-} = require('./helper');
+} = require("./helper");
 
 const extensions = [].concat(
     JSX_EXTENSIONS, CJSX_EXTENSIONS, MJSX_EXTENSIONS, TSX_EXTENSIONS,
@@ -17,24 +17,24 @@ module.exports = {
         },
     },
     settings: {
-        'import/extensions': extensions,
+        "import/extensions": extensions,
         react: {
-            version: 'detect',
+            version: "detect",
         },
     },
     plugins: [
-        'react',
-        'react-hooks',
+        "react",
+        "react-hooks",
     ],
     rules: Object.assign(
         {},
         {
-            'react-hooks/rules-of-hooks': 'error',
-            'react-hooks/exhaustive-deps': 'warn',
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "warn",
         },
     ),
     extends: [
-        'plugin:import/react',
-        'plugin:react/recommended',
+        "plugin:import/react",
+        "plugin:react/recommended",
     ],
 };

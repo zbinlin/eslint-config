@@ -10,12 +10,12 @@ function exts2glob(exts) {
 }
 
 const toReactExts = exts => exts.map(ext => `${ext}x`);
-const toTestExts = (exts, testExt = 'test') => exts.map(ext => `.${testExt}${ext}`);
+const toTestExts = (exts, testExt = "test") => exts.map(ext => `.${testExt}${ext}`);
 
-const JS_EXTENSIONS = ['.js'];
-const CJS_EXTENSIONS = ['.cjs'];
-const MJS_EXTENSIONS = ['.mjs'];
-const TS_EXTENSIONS = ['.ts'];
+const JS_EXTENSIONS = [".js"];
+const CJS_EXTENSIONS = [".cjs"];
+const MJS_EXTENSIONS = [".mjs"];
+const TS_EXTENSIONS = [".ts"];
 const JSX_EXTENSIONS = toReactExts(JS_EXTENSIONS);
 const CJSX_EXTENSIONS = toReactExts(CJS_EXTENSIONS);
 const MJSX_EXTENSIONS = toReactExts(MJS_EXTENSIONS);
