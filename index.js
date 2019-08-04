@@ -1,31 +1,9 @@
-const jsOpt = require("./javascript");
-const tsOpt = require("./typescript");
-const reactOpt = require("./react");
 const {
     exts2glob,
-    toTestExts,
-
-    JS_EXTENSIONS,
-    CJS_EXTENSIONS,
-    MJS_EXTENSIONS,
-    TS_EXTENSIONS,
-    JSX_EXTENSIONS,
-    CJSX_EXTENSIONS,
-    MJSX_EXTENSIONS,
-    TSX_EXTENSIONS,
-} = require("./helper");
-
-const testExtsPattern = exts2glob(toTestExts(
-    [].concat(
-        JS_EXTENSIONS, CJS_EXTENSIONS, MJS_EXTENSIONS, TS_EXTENSIONS,
-        JSX_EXTENSIONS, CJSX_EXTENSIONS, MJSX_EXTENSIONS, TSX_EXTENSIONS,
-    ),
-));
-
+} = require("./lib/helper");
 const {
-    files: _,
-    ...defaultOpt
-} = jsOpt;
+    test: testExtensions,
+} = require("./lib/ext");
 
 module.exports = {
     env: {
@@ -33,20 +11,18 @@ module.exports = {
         node: true,
         browser: true,
     },
-    ...defaultOpt,
     overrides: [
         {
-            files: testExtsPattern,
+            files: exts2glob(testExtensions),
             env: {
                 mocha: true,
                 jest: true,
             },
         },
-        {
-            ...reactOpt,
-        },
-        {
-            ...tsOpt,
-        },
+    ],
+    extends: [
+        "./javascript",
+        "./react",
+        "./typescript",
     ],
 };

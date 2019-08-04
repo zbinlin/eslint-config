@@ -1,74 +1,14 @@
+const { exts2glob } = require("./lib/helper");
 const {
-    exts2glob,
-    JS_EXTENSIONS,
-    CJS_EXTENSIONS,
-    MJS_EXTENSIONS,
-} = require("./helper");
+    javascript: extensions,
+} = require("./lib/ext");
+const config = require("./config/javascript");
 
-const extensions = [].concat(
-    JS_EXTENSIONS, CJS_EXTENSIONS, MJS_EXTENSIONS,
-);
 module.exports = {
-    files: exts2glob(extensions),
-    parserOptions: {
-        ecmaVersion: 2019,
-        sourceType: "module",
-        ecmaFeatures: {
+    overrides: [
+        {
+            files: exts2glob(extensions),
+            ...config,
         },
-    },
-    rules: {
-        indent: [
-            "error",
-            4,
-            {
-                SwitchCase: 1,
-            },
-        ],
-        quotes: [
-            "error",
-            "double",
-            {
-                avoidEscape: true,
-                allowTemplateLiterals: true,
-            },
-        ],
-        "linebreak-style": [
-            "error",
-            "unix",
-        ],
-        semi: [
-            "error",
-            "always",
-        ],
-        "no-unused-vars": [
-            "error",
-            {
-                args: "none",
-                ignoreRestSiblings: true,
-            },
-        ],
-        "no-console": [
-            "off",
-        ],
-        "comma-dangle": [
-            "warn",
-            "always-multiline",
-        ],
-        "no-trailing-spaces": [
-            "error",
-        ],
-        "import/no-unresolved": [
-            "warn",
-            {
-                commonjs: true,
-            },
-        ],
-    },
-    plugins: [
-    ],
-    extends: [
-        "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
     ],
 };

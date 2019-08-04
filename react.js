@@ -1,40 +1,14 @@
+const { exts2glob } = require("./lib/helper");
 const {
-    exts2glob,
-    JSX_EXTENSIONS,
-    CJSX_EXTENSIONS,
-    MJSX_EXTENSIONS,
-    TSX_EXTENSIONS,
-} = require("./helper");
+    react: extensions,
+} = require("./lib/ext");
+const config = require("./config/react");
 
-const extensions = [].concat(
-    JSX_EXTENSIONS, CJSX_EXTENSIONS, MJSX_EXTENSIONS, TSX_EXTENSIONS,
-);
 module.exports = {
-    files: exts2glob(extensions),
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-    },
-    settings: {
-        "import/extensions": extensions,
-        react: {
-            version: "detect",
-        },
-    },
-    plugins: [
-        "react",
-        "react-hooks",
-    ],
-    rules: Object.assign(
-        {},
+    overrides: [
         {
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
+            files: exts2glob(extensions),
+            ...config,
         },
-    ),
-    extends: [
-        "plugin:import/react",
-        "plugin:react/recommended",
     ],
 };
