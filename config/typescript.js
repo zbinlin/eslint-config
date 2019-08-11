@@ -26,6 +26,10 @@ module.exports = {
     rules: Object.assign(
         {},
         {
+            semi: [
+                "error",
+                "always",
+            ],
             /**
              * @link https://github.com/benmosher/eslint-plugin-import/issues/920
              */
