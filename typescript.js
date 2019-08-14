@@ -1,6 +1,6 @@
 const { exts2glob } = require("./lib/helper");
 const {
-    all: extensions,
+    typescript: extensions,
 } = require("./lib/ext");
 const config = require("./config/typescript");
 
