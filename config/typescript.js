@@ -37,10 +37,11 @@ module.exports = {
 
             "react/display-name": "off",
 
-            "@typescript-eslint/no-object-literal-type-assertion": [
+            "@typescript-eslint/consistent-type-assertions": [
                 "error",
                 {
-                    allowAsParameter: true,
+                    assertionStyle: "as",
+                    objectLiteralTypeAssertions: "allow-as-parameter",
                 },
             ],
             "@typescript-eslint/no-non-null-assertion": "off",
@@ -52,7 +53,13 @@ module.exports = {
                 },
             ],
             "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/array-type": ["error", "array-simple"],
+            "@typescript-eslint/array-type": [
+                "error",
+                {
+                    default: "array-simple",
+                    readonly: "array-simple",
+                },
+            ],
 
             /**
              * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
