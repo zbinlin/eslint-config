@@ -19,22 +19,22 @@
     "author": "Colin Cheng <zbinlin@outlook.com>",
     "license": "MIT",
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^1.13.0",
-        "@typescript-eslint/parser": "^1.13.0",
-        "eslint": ">= 6.1.0",
-        "eslint-import-resolver-typescript": "^1.1.1",
+        "@typescript-eslint/eslint-plugin": "^2.6.1",
+        "@typescript-eslint/parser": "^2.6.1",
+        "eslint": ">= 6.6.0",
+        "eslint-import-resolver-typescript": "^2.0.0",
         "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-react": "^7.14.3",
-        "eslint-plugin-react-hooks": "^1.6.1",
-        "typescript": "^3.5.3"
+        "eslint-plugin-react": "^7.16.0",
+        "eslint-plugin-react-hooks": "^2.2.0",
+        "typescript": "^3.7.2"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^1.13.0",
-        "@typescript-eslint/parser": "^1.13.0",
-        "eslint": ">= 6.1.0",
-        "eslint-import-resolver-typescript": "^1.1.1",
+        "@typescript-eslint/eslint-plugin": "^2.6.1",
+        "@typescript-eslint/parser": "^2.6.1",
+        "eslint": ">= 6.6.0",
+        "eslint-import-resolver-typescript": "^2.0.0",
         "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-react": "^7.14.3",
-        "eslint-plugin-react-hooks": "^1.6.1"
+        "eslint-plugin-react": "^7.16.0",
+        "eslint-plugin-react-hooks": "^2.2.0"
     }
 }
