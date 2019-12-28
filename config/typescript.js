@@ -60,6 +60,7 @@ module.exports = {
                     readonly: "array-simple",
                 },
             ],
+            "@typescript-eslint/no-inferrable-types": "off",
 
             /**
              * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
