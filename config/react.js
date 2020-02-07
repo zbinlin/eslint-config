@@ -23,6 +23,10 @@ module.exports = {
         {
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "warn",
+            // @see: https://github.com/yannickcr/eslint-plugin-react/issues/2353
+            "react/prop-types": [
+                "off",
+            ],
         },
     ),
     extends: [
