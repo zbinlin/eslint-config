@@ -2,6 +2,7 @@ const {
     all: extensions,
     typescript: tsExtensions,
 } = require("../lib/ext");
+const { rules } = require("./common");
 
 module.exports = {
     parser: "@typescript-eslint/parser",
@@ -23,51 +24,46 @@ module.exports = {
     plugins: [
         "@typescript-eslint",
     ],
-    rules: Object.assign(
-        {},
-        {
-            semi: [
-                "error",
-                "always",
-            ],
-            /**
-             * @link https://github.com/benmosher/eslint-plugin-import/issues/920
-             */
-            "import/named": "off",
+    rules: {
+        ...rules,
 
-            "react/display-name": "off",
+        /**
+         * @link https://github.com/benmosher/eslint-plugin-import/issues/920
+         */
+        "import/named": "off",
 
-            "@typescript-eslint/consistent-type-assertions": [
-                "error",
-                {
-                    assertionStyle: "as",
-                    objectLiteralTypeAssertions: "allow-as-parameter",
-                },
-            ],
-            "@typescript-eslint/no-non-null-assertion": "off",
-            "@typescript-eslint/interface-name-prefix": "off",
-            "@typescript-eslint/no-unused-vars": [
-                "error",
-                {
-                    argsIgnorePattern: "^_",
-                },
-            ],
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/array-type": [
-                "error",
-                {
-                    default: "array-simple",
-                    readonly: "array-simple",
-                },
-            ],
-            "@typescript-eslint/no-inferrable-types": "off",
+        "react/display-name": "off",
 
-            /**
-             * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
-             */
-            "no-undef": "off",
-        },
-    ),
+        "@typescript-eslint/consistent-type-assertions": [
+            "error",
+            {
+                assertionStyle: "as",
+                objectLiteralTypeAssertions: "allow-as-parameter",
+            },
+        ],
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                argsIgnorePattern: "^_",
+            },
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/array-type": [
+            "error",
+            {
+                default: "array-simple",
+                readonly: "array-simple",
+            },
+        ],
+        "@typescript-eslint/no-inferrable-types": "off",
+
+        /**
+         * @link https://github.com/typescript-eslint/typescript-eslint/issues/342
+         */
+        "no-undef": "off",
+    },
     extends: [
         "plugin:import/typescript",
         "plugin:@typescript-eslint/recommended",
