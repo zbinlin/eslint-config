@@ -4,6 +4,7 @@ exports.rules = {
         4,
         {
             SwitchCase: 1,
+            MemberExpression: 0,
         },
     ],
     quotes: [
