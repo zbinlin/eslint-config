@@ -57,6 +57,15 @@ module.exports = {
                 readonly: "array-simple",
             },
         ],
+        "@typescript-eslint/explicit-function-return-type": [
+            "warn",
+            {
+                allowExpressions: true,
+                allowTypedFunctionExpressions: true,
+                allowHigherOrderFunctions: true,
+                allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+            },
+        ],
         "@typescript-eslint/no-inferrable-types": "off",
 
         /**
