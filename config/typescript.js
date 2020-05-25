@@ -27,6 +27,9 @@ module.exports = {
     rules: {
         ...rules,
 
+        "indent": "off",
+        "@typescript-eslint/indent": rules.indent,
+
         /**
          * @link https://github.com/benmosher/eslint-plugin-import/issues/920
          */
