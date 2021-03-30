@@ -1,13 +1,17 @@
 const { exts2glob } = require("./lib/helper");
 const {
-    typescript: extensions,
+    typescript: tsExtensions,
+    typescriptReact: tsReactExtensions,
 } = require("./lib/ext");
 const config = require("./config/typescript");
 
 module.exports = {
     overrides: [
         {
-            files: exts2glob(extensions),
+            files: exts2glob([
+                ...tsExtensions,
+                ...tsReactExtensions,
+            ]),
             ...config,
         },
     ],
