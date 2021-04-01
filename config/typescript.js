@@ -1,6 +1,7 @@
 const {
     all: extensions,
     typescript: tsExtensions,
+    typescriptReact: tsReactExtensions,
 } = require("../lib/ext");
 const { rules } = require("./common");
 
@@ -11,7 +12,10 @@ module.exports = {
     settings: {
         "import/extensions": extensions,
         "import/parsers": {
-            "@typescript-eslint/parser": tsExtensions,
+            "@typescript-eslint/parser": [
+                ...tsExtensions,
+                ...tsReactExtensions,
+            ],
         },
         "import/resolver": {
             typescript: {
