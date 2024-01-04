@@ -1,6 +1,6 @@
 {
     "name": "@zbinlin/eslint-config",
-    "version": "5.0.0",
+    "version": "5.1.0",
     "description": "My eslint config",
     "main": "index.js",
     "scripts": {
