@@ -2,7 +2,7 @@ const { rules } = require("./common");
 
 module.exports = {
     parserOptions: {
-        ecmaVersion: 2020,
+        ecmaVersion: "latest",
         sourceType: "module",
         ecmaFeatures: {
         },
